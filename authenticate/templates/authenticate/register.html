@@ -1,0 +1,16 @@
+{% extends "authenticate/base.html" %} {% block content %}
+
+<div class="row my-3">
+    <h1 class="text-center">Register</h1>
+   <form method="POST" action="{% url 'register' %}">
+
+    {% csrf_token %}
+    {% if form.errors %}
+        <p>Your form has error</p>
+    {% endif %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Submit</button>
+   </form>
+</div>
+
+{% endblock content %}
